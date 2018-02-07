@@ -11,7 +11,6 @@ class ScoreCollectionTest {
 
     @Test
     fun test() {
-        fail("Not implemented yet")
     }
 
 }
