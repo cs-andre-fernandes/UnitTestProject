@@ -1,4 +1,4 @@
-package com.concrete.fernandes.andre.unittestesexample.score
+package com.concrete.fernandes.andre.unittestesexample.chapter1
 
 /**
  * Created by andre on 06/02/18.

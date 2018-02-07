@@ -1,4 +1,4 @@
-package com.concrete.fernandes.andre.unittestesexample
+package com.concrete.fernandes.andre.unittestesexample.chapter1
 
 import org.junit.Assert.fail
 import org.junit.Test
