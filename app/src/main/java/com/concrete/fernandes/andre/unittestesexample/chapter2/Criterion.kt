@@ -1,0 +1,6 @@
+package com.concrete.fernandes.andre.unittestesexample.chapter2
+
+/**
+ * Created by andre on 07/02/18.
+ */
+class Criterion(val answer: Answer, val weight: Weight)
