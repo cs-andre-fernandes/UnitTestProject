@@ -5,9 +5,9 @@ package com.concrete.fernandes.andre.unittestesexample.chapter2
  */
 class CriteriaRefactor {
 
-    val criteria : MutableList<CriterionRefactor> = ArrayList()
+    val criteriaList: MutableList<CriterionRefactor> = ArrayList()
 
     fun addCriterion(criterion: CriterionRefactor) {
-       criteria.add(criterion)
+       criteriaList.add(criterion)
     }
 }
