@@ -1,6 +1,5 @@
 package com.concrete.fernandes.andre.unittestesexample.chapter2
 
-import com.concrete.fernandes.andre.unittestesexample.chapter2.*
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
@@ -63,7 +62,7 @@ class ProfileTest {
         val scoreResult = profile.score
 
         //Assert
-        assertEquals(Weight.DontCare.value, scoreResult)
+        assertEquals(WeightRefactor.DontCare.value, scoreResult)
     }
 
 }
