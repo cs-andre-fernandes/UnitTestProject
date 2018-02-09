@@ -4,8 +4,7 @@ import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Test
 import org.mockito.Matchers.contains
-import org.mockito.Mockito.`when`
-import org.mockito.Mockito.mock
+import org.mockito.Mockito.*
 
 /**
  * Created by andre on 08/02/18.
@@ -16,7 +15,7 @@ class AddressReceiverTest {
     fun answerAppropriateAddressForValidCoordinates() {
         //Arrange
         val http: Http = mock(Http::class.java)
-        `when`(http.get("http://open.mapquestapi.com/nominatim/v1/reverse?format=json&lat=38.0&lon=-104.0")).thenReturn(
+        `when`(http.get(contains("lat=38.0&lon=-104.0"))).thenReturn(
                 "{\"address\":{"
                         + "\"house_number\":\"324\","
                         + "\"road\":\"North Tejon Street\","
