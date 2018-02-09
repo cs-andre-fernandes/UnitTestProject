@@ -6,8 +6,14 @@ package com.concrete.fernandes.andre.unittestesexample.chapter12
 
 class ProfileTDD {
 
+     var answer: AnswerTDD? = null
+
     fun matches(criterion: CriterionTDD): Boolean {
-        return false
+        return answer != null
+    }
+
+    fun add(answer: AnswerTDD) {
+        this.answer = answer
     }
 
 }
