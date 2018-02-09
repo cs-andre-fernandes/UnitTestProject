@@ -9,7 +9,7 @@ class ProfileTDD {
      var answer: AnswerTDD? = null
 
     fun matches(criterion: CriterionTDD): Boolean {
-        return answer != null
+        return answer != null && answer?.match(criterion.answer)!!
     }
 
     fun add(answer: AnswerTDD) {
