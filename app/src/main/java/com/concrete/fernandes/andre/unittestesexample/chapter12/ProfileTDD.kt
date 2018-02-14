@@ -6,14 +6,22 @@ package com.concrete.fernandes.andre.unittestesexample.chapter12
 
 class ProfileTDD {
 
-     var answer: AnswerTDD? = null
+     private val answers: MutableMap<String, AnswerTDD?> = HashMap()
 
     fun matches(criterion: CriterionTDD): Boolean {
-        return answer != null && answer?.match(criterion.answer)!!
+        val answer: AnswerTDD? = matchingProfileAnswer(criterion)
+        return criterion.answer.match(answer)
     }
 
+    fun matches(criteria: CriteriaTDD): Boolean {
+        return criteria.criterionList.any { matches(it) }
+    }
+
+    private fun matchingProfileAnswer(criterion: CriterionTDD) =
+            answers.get(criterion.answer.questionTDD.questionText)
+
     fun add(answer: AnswerTDD) {
-        this.answer = answer
+        this.answers[answer.questionTDD.questionText] = answer
     }
 
 }
