@@ -2,19 +2,34 @@ package com.concrete.fernandes.andre.unittestesexample.chapter10
 
 import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.MatcherAssert.assertThat
+import org.junit.Before
 import org.junit.Test
+import org.mockito.InjectMocks
 import org.mockito.Matchers.contains
+import org.mockito.Mock
 import org.mockito.Mockito.*
+import org.mockito.MockitoAnnotations
 
 /**
  * Created by andre on 08/02/18.
  */
 class AddressReceiverTest {
 
+    @Mock
+    lateinit var http: Http
+
+    @InjectMocks lateinit var retriever: AddressReceiver
+
+    @Before
+    fun create() {
+        MockitoAnnotations.initMocks(this)
+        retriever = AddressReceiver(http)
+    }
+
     @Test
     fun answerAppropriateAddressForValidCoordinates() {
         //Arrange
-        val http: Http = mock(Http::class.java)
+
         `when`(http.get(contains("lat=38.0&lon=-104.0"))).thenReturn(
                 "{\"address\":{"
                         + "\"house_number\":\"324\","
@@ -25,8 +40,6 @@ class AddressReceiverTest {
                         + "\"country_code\":\"us\"}"
                         + "}"
         )
-
-        val retriever = AddressReceiver(http)
 
         //Act
         val address = retriever.receive(38.0, -104.0)
